@@ -348,13 +348,270 @@ def N16():
 
 
 def N17():
-    pass
+    M = random.randrange(2, 10)
+    N = random.randrange(2, 10)
+    K = random.randrange(1, M)
+
+    print("M = ", M, "; N = ", N, "; K = ", K)
+    a = np.zeros((M, N))
+    for i in range(M):
+        for j in range(N):
+            a[i][j] = j*i
+
+    print(a, '\n', '\n')
+
+    Summa = 0
+    Product = 1
+
+    for i in range(N):
+        Summa += a[K][i]
+        Product *= a[K][i]
+        print(a[K][i], end = ', ')
+    print()
+    print('Summa = ', Summa, 'Product = ', Product)
+
+
+
+def N18():
+    M = random.randrange(2, 10)
+    N = random.randrange(2, 10)
+    K = random.randrange(1, M)
+
+    print("M = ", M, "; N = ", N, "; K = ", K)
+    a = np.zeros((M, N))
+    for i in range(M):
+        for j in range(N):
+            a[i][j] = j*i
+
+    print(a, '\n', '\n')
+
+    Summa = 0
+    Product = 1
+
+    for i in range(M):
+        Summa += a[i][K]
+        Product *= a[i][K]
+        print(a[i][K], end = ', ')
+    print()
+    print('Summa = ', Summa, 'Product = ', Product)
+
+
+
+def N19():
+    M = random.randrange(2, 10)
+    N = random.randrange(2, 10)
+
+
+    print("M = ", M, "; N = ", N)
+    a = np.zeros((M, N))
+    for i in range(M):
+        for j in range(N):
+            a[i][j] = j*i
+
+    print(a, '\n', '\n')
+
+
+    Summa_m = {}
+    for j in range(M):
+        Summa = 0
+        for i in range(N):
+            Summa += a[j][i]
+            print(a[j][i], end = ', ')
+        print()
+        Summa_m[j] = Summa
+
+
+    print()
+    print('Summa = ', Summa_m)
+
+
+
+def N20():
+   M = random.randrange(2, 10)
+   N = random.randrange(2, 10)
+
+
+   print("M = ", M, "; N = ", N)
+   a = np.zeros((M, N))
+   for i in range(M):
+       for j in range(N):
+           a[i][j] = j+1*i
+
+   print(a, '\n', '\n')
+
+
+   Product_m = {}
+   for j in range(N):
+       Product = 1
+       for i in range(M):
+           Product *= a[i][j]
+           print(a[i][j], end = ', ')
+       print()
+       Product_m[j] = Product
+
+
+   print()
+   print('Product = ', Product_m)
+
+
+def N21():
+   M = random.randrange(2, 10)
+   N = random.randrange(2, 10)
+
+
+   print("M = ", M, "; N = ", N)
+   a = np.zeros((M, N))
+   for i in range(M):
+       for j in range(N):
+           a[i][j] = j+1*i
+
+   print(a, '\n', '\n')
+
+
+   Averaged_d = {}
+   for i in range(1, M, 2):
+       Averaged = 0
+       for j in range(N):
+           Averaged += a[i][j]
+           print(a[i][j], end = ', ')
+       print()
+       Averaged_d[i] = Averaged / (j+1)
+
+
+   print()
+   print('Averaged = ', Averaged_d)
+
+
+
+def N22():
+   M = random.randrange(2, 10)
+   N = random.randrange(2, 10)
+
+
+   print("M = ", M, "; N = ", N)
+   a = np.zeros((M, N))
+   for i in range(M):
+       for j in range(N):
+           a[i][j] = j+1*i
+
+   print(a, '\n', '\n')
+
+
+   Averaged_d = {}
+   for i in range(0, N, 2):
+       Averaged = 0
+       for j in range(M):
+           Averaged += a[j][i]
+           print(a[j][i], end = ', ')
+       print()
+       Averaged_d[i] = Averaged / (j+1)
+
+
+   print()
+   print('Averaged = ', Averaged_d)
+
+
+def N23():
+   M = random.randrange(2, 10)
+   N = random.randrange(2, 10)
+
+
+   print("M = ", M, "; N = ", N)
+   a = np.zeros((M, N))
+   for i in range(M):
+       for j in range(N):
+           a[i][j] = random.randint(0, 15)
+
+   print(a, '\n', '\n')
+
+
+   for i in range(M):
+       Min = 10**10
+       for j in range(N):
+           print(a[i][j], end = ', ')
+           if a[i][j] < Min:
+               Min = a[i][j]
+       print()
+       print(f'{i}:', i, '\t Min = ', Min)
+
+
+
+       print()
+
+
+
+def N24():
+   M = random.randrange(2, 10)
+   N = random.randrange(2, 10)
+
+
+   print("M = ", M, "; N = ", N)
+   a = np.zeros((M, N))
+   for i in range(M):
+       for j in range(N):
+           a[i][j] = random.randint(0, 15)
+
+   print(a, '\n', '\n')
+
+
+   for i in range(N):
+       Max = 10**(-10)
+       for j in range(M):
+           print(a[j][i], end = ', ')
+           if a[j][i] > Max:
+               Max = a[j][i]
+       print()
+       print(f'{i}:', i, '\t Max = ', Max)
+
+
+
+       print()
+
+'''
+С 25 по 30, задачи довольно однотипны и невызывают интереса.
+'''
+
+
+
+def N31():
+    M = random.randrange(2, 10)
+    N = random.randrange(2, 10)
+
+
+    print("M = ", M, "; N = ", N)
+    a = np.zeros((M, N))
+
+    for i in range(M):
+        for j in range(N):
+            a[i][j] = random.randint(0, 15)
+
+    print(a, '\n', '\n')
+
+    Avr = 0
+    for i in range(M):
+        for j in range(N):
+           Avr+= a[i][j]
+    Avr /= M * N
+    print('Avr = ', Avr)
+
+    delta = 0
+    Avr_close = 10**10
+    for i in range(M):
+        for j in range(N):
+            delta = abs(Avr - a[i][j])
+            if delta < Avr_close:
+                Avr_close = delta
+                row = i
+                colomn = j
+    print('Row:', row+1, '\nColomn:', colomn+1, '\nNumber = ', a[row][colomn])
 
 
 
 
 
-N17()
+
+
+N31()
 
 
 
