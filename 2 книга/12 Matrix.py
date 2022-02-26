@@ -609,9 +609,103 @@ def N31():
 
 
 
+def N32():
+    M = random.randrange(2, 10)
+    N = random.randrange(2, 10)
 
 
-N31()
+    print("M = ", M, "; N = ", N)
+    a = np.zeros((M, N))
+
+    for i in range(M):
+        for j in range(N):
+            a[i][j] = random.randint(-15, 15)
+
+    print(a, '\n', '\n')
+
+
+    for i in range(M):
+        poloj = 0
+        otric = 0
+        for j in range(N):
+            if a[i][j] > 0:
+                poloj += 1
+            elif a[i][j] < 0:
+                otric += 1
+            else:
+                pass # Случай нуля
+        if poloj == otric:
+            print('Номер строки - ', i+1)
+            break
+
+    else:
+        print('Такой строки нет - ', 0)
+
+
+
+def N33():
+    M = random.randrange(2, 10)
+    N = random.randrange(2, 10)
+
+
+    print("M = ", M, "; N = ", N)
+    a = np.zeros((M, N))
+
+    for i in range(M):
+        for j in range(N):
+            a[i][j] = random.randint(-15, 15)
+
+    print(a, '\n', '\n')
+
+
+    for i in range(N):
+        poloj = 0
+        otric = 0
+        for j in range(M):
+            if a[j][i] > 0:
+                poloj += 1
+            elif a[j][i] < 0:
+                otric += 1
+            else:
+                pass # Случай нуля
+        if poloj == otric:
+            print('Номер столбца - ', i+1)
+            break
+
+    else:
+        print('Такого столбца нет - ', 0)
+
+
+
+def N34():
+    M = random.randrange(2, 10)
+    N = random.randrange(2, 10)
+
+
+    print("M = ", M, "; N = ", N)
+    a = np.zeros((M, N))
+
+    for i in range(M):
+        for j in range(N):
+            a[i][j] = i
+
+    print(a, '\n', '\n')
+    flag = True
+    for i in range(M-1, 0, -1):
+        chetni = 0
+        for j in range(N):
+            if a[i][j]%2 == 0:
+                chetni += 1
+            else:
+                pass
+        if chetni == N:
+            print('Все элементы четны - ', i+1) # Счет строк начинается с единицы.
+            flag = False
+            break
+    if flag:
+        print('Таких строк нет - ', 0)
+
+N34()
 
 
 
