@@ -705,7 +705,134 @@ def N34():
     if flag:
         print('Таких строк нет - ', 0)
 
-N34()
+
+
+def N35():
+    M = random.randrange(2, 10)
+    N = random.randrange(2, 10)
+
+
+    print("M = ", M, "; N = ", N)
+    a = np.zeros((M, N))
+
+
+    for i in range(M):
+        for j in range(N):
+            a[i][j] = j
+
+    print(a, '\n', '\n')
+    flag = True
+
+    for i in range(N):
+        nechetni = 0
+        for j in range(M):
+            if a[j][i]%2 != 0:
+                nechetni += 1
+            else:
+                pass
+        if nechetni == M:
+            print('Все элементы нечетны - ', i+1) # Счет строк начинается с единицы.
+            flag = False
+            break
+    if flag:
+        print('Таких столбцов нет - ', 0)
+
+
+def N36():
+    ''' Довольно сложно понять, что именно понимать под "мноетсвом чисел",
+    в итоге я решил сравнивать числа из разных строк не учитывая порядок, т.е.
+    если в одной строке есть - 3,4,8,1,
+    а в другой - 4,1,3,8
+    То такие строки похожи, несмотря на порядок чисел.
+
+    '''
+    M = random.randrange(2, 10)
+    N = random.randrange(2, 10)
+
+
+    print("M = ", M, "; N = ", N)
+    a = np.zeros((M, N))
+
+
+    for i in range(M):
+        for j in range(N):
+            a[i][j] = random.randint(0, 100)
+
+    print(a, '\n', '\n')
+
+    First = a[0]
+    table_of_similar = {}
+    count = 0
+
+
+    for i in range(1, M):
+        value = []
+        for j in range(N):
+            if a[i][j] in First:
+                value.append(a[i][j])
+
+        if value != []:
+            table_of_similar[i] = f'множество {value}'
+            count+=1
+
+    print(First)
+    print(table_of_similar)
+    if table_of_similar == {}:
+        print("Похожих строк нет")
+    else:
+        print(f'Похожих строк - {count}')
+
+
+
+def N37():
+    M = random.randrange(2, 10)
+    N = random.randrange(2, 10)
+
+
+    print("M = ", M, "; N = ", N)
+    a = np.zeros((M, N))
+
+
+    for i in range(M):
+        for j in range(N):
+            a[i][j] = random.randint(0, 100)
+
+    print(a, '\n', '\n')
+
+    First = []
+    for i in range(M):
+        First.append(a[i][0])
+    table_of_similar = {}
+    count = 0
+
+
+    for i in range(1, N):
+        value = []
+        for j in range(0, M):
+            if a[j][i] in First:
+                value.append(a[j][i])
+
+        if value != []:
+            table_of_similar[i] = f'множество {value}'
+            count+=1
+
+    print(First)
+    print(table_of_similar)
+    if table_of_similar == {}:
+        print("Похожих столбцов нет")
+    else:
+        print(f'Похожих столбцов - {count}')
+
+
+
+def N38():
+    pass
+
+
+
+
+
+N37()
 
 
 
